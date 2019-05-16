@@ -5,6 +5,25 @@
 class App {
   constructor() {
     // TODO(you): Implement the constructor and add fields as necessary.
+    const menuElement = document.querySelector('#menu');
+    const musicElement = document.querySelector('#music');
+
+    this.toMusic = this.toMusic.bind(this);
+    document.addEventListener('toMusic', this.toMusic);
+
+    this.menu = new MenuScreen(menuElement);
+    this.music = new MusicScreen(musicElement);
+
   }
   // TODO(you): Add methods as necessary.
+
+  toMusic() {
+    document.querySelector('#menu').classList.add("inactive");
+    document.querySelector('#music').classList.remove("inactive");
+    //console.log(this.menu.songUrl)
+    //console.log(document.getElementById("query-input").value)
+
+    document.dispatchEvent(new CustomEvent('getGifs'));
+
+  }
 }

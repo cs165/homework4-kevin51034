@@ -84,6 +84,30 @@ body {
   text-align: center;
 }
 
+#music {
+  display : flex;
+  height : 100vh;
+  flex-direction: column;
+}
+
+#gif {
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#buttonsec {
+  height : 70px;
+  margin : 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#buttonimg {
+  height : 60px;
+  width : 60px;
+
+}
 .inactive {
   display: none !important;
 }
