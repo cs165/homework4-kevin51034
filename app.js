@@ -23,7 +23,9 @@ class App {
     //console.log(this.menu.songUrl)
     //console.log(document.getElementById("query-input").value)
 
-    document.dispatchEvent(new CustomEvent('getGifs'));
-
+    //document.dispatchEvent(new CustomEvent('getGifs'));
+    this.music.getGifs();
+    this.music.setSong();
+    //this.music.audioPlayer.play();
   }
 }

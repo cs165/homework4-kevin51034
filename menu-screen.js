@@ -15,7 +15,7 @@ class MenuScreen {
     this.artist;
     this.theme = ['candy', 'charlie brown', 'computers', 'dance', 'donuts', 'hello kitty', 'flowers', 'nature', 'turtles', 'space'];
 
-    console.log(this);
+    //console.log(this);
     this.myJsonReady = this.myJsonReady.bind(this);
 
     this.fetchsongs = this.fetchsongs.bind(this);

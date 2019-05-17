@@ -88,13 +88,35 @@ body {
   display : flex;
   height : 100vh;
   flex-direction: column;
-}
 
+
+}
 #gif {
   flex-grow: 1;
+  position: relative;
+
+}
+
+#frontgif {
+  height:100%;
+  width:100%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  z-index: 1;
+  position: absolute;
+
+}
+#backgif {
+  height:100%;
+  width:100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  position: absolute;
+  top : 0px;
+
 }
 #buttonsec {
   height : 70px;
@@ -103,7 +125,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-#buttonimg {
+#playbutton , #pausebutton {
   height : 60px;
   width : 60px;
 

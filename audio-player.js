@@ -12,9 +12,12 @@ class AudioPlayer {
       onKick: this._onKickCallback
     });
     this.kick.on();
+
   }
 
   setSong(songUrl) {
+    console.log('setSong');
+
     let audio = new Audio();
     audio.crossOrigin = 'anonymous';
     audio.loop = 'true';
@@ -23,7 +26,12 @@ class AudioPlayer {
     this.dancer.load(audio);
   }
 
+  resume(){
+  }
+
   play() {
+    console.log('play');
+
     this.dancer.play();
     const nowTime = Date.now();
     if (this.lastKickTime === -1) {
@@ -40,6 +48,8 @@ class AudioPlayer {
   }
 
   _onKickCallback() {
+    console.log('kick!');
+
     if (!this.kickCallback) {
       return;
     }
