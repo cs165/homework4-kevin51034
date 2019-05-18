@@ -16,8 +16,6 @@ class AudioPlayer {
   }
 
   setSong(songUrl) {
-    console.log('setSong');
-
     let audio = new Audio();
     audio.crossOrigin = 'anonymous';
     audio.loop = 'true';
@@ -26,8 +24,6 @@ class AudioPlayer {
     this.dancer.load(audio);
   }
 
-  resume(){
-  }
 
   play() {
     console.log('play');
