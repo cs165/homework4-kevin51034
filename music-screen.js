@@ -14,7 +14,7 @@ class MusicScreen {
 
     this.gifJsonReady = this.gifJsonReady.bind(this);
     this.playButton = new PlayButton(this.audioPlayer);
-    this.disPlayGifs = new GifDisplay(this)
+
     this.gif = true;
   }
   getGifs() {
@@ -37,21 +37,24 @@ class MusicScreen {
       this.gif = false;
     }
     else {
-      this.gifUrl = json.data[0].images.downsized.url;
-      this.gifUrl2 = json.data[1].images.downsized.url;
-
-      document.getElementById('frontgif').style.backgroundImage = `url(${this.gifUrl})`;
-      document.getElementById('backgif').style.backgroundImage = `url(${this.gifUrl2})`;
-      document.querySelector('#menu').classList.add("inactive");
-      document.querySelector('#music').classList.remove("inactive");
-      this.setSong();
+      this.setGifs(this.data);
+      this.setSong(this.data);
     }
   }
-  setSong() {
+  setSong(data) {
+    console.log('setSong');
+    this.data = data;
     this.audioPlayer = new AudioPlayer();
     this.audioPlayer.setSong(app.menu.songUrl);
     this.audioPlayer.setKickCallback(this.disPlayGifs.changeGif);
     //this.audioPlayer.resume();
     this.audioPlayer.play();
+  }
+  setGifs(data) {
+    console.log(data);
+    this.disPlayGifs = new GifDisplay(this)
+    this.disPlayGifs.preload();
+    document.querySelector('#menu').classList.add("inactive");
+    document.querySelector('#loading').classList.remove("inactive");
   }
 }

@@ -130,6 +130,17 @@ body {
   width : 60px;
 
 }
+
+#loading {
+  position:absolute;
+  top : 50%;
+  left : 50%;
+  margin-left: -2em;
+  color : #e2e2e2;
+  font-size: 2em;
+  font-style: italic;
+}
+
 .inactive {
   display: none !important;
 }
